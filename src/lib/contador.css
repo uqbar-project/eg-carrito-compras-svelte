@@ -1,0 +1,42 @@
+.box {
+  width: 100%;
+  margin: 1em 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: antiquewhite;
+  height: 4em;
+}
+
+.box button {
+  height: 3em;
+  width: 3em;
+  padding: 0.5em;
+  border-radius: 10px;
+  font-size: large;
+}
+
+.box button:hover {
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+  color: var(--primary-font-color);
+  border-color: var(--primary-color);
+}
+
+button.secondary {
+  background-color: var(--secondary-color);
+  color: var(--secondary-font-color);
+  border-color: var(--secondary-color);
+}
+
+span {
+  line-height: 2.5em;
+  width: 3em;
+  text-align: center;
+  font-size: x-large;
+  vertical-align: middle;
+}

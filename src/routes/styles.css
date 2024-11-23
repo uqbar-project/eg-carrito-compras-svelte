@@ -1,0 +1,10 @@
+* {
+	font-family: 'Parkinsans', sans-serif;
+}
+
+:root {
+	--primary-color: steelblue;
+	--secondary-color: lightblue;
+	--primary-font-color: white;
+	--secondary-font-color: black;
+}
