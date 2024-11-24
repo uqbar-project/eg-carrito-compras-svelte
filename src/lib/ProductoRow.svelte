@@ -3,11 +3,11 @@
   import './producto.css'
 	import { showCurrency } from './utils'
 
-  let { producto, seleccionado } = $props()
+  let { producto, seleccionado, key } = $props()
   let claseSeleccion = $derived(seleccionado ? 'elegido' : 'normal')
 </script>
 
-<div data-testid="row" class='container {claseSeleccion}'>
+<div data-testid={'row-' + key} class='container {claseSeleccion}'>
   <div class="imagen">
     <img src="/{producto.imagen}" alt={producto.descripcion}/>
   </div>

@@ -19,22 +19,22 @@ describe('el producto', () => {
   })
 
 	it('muestra el elemento seleccionado con una clase especial', () => {
-    render(ProductoRow, { producto, seleccionado: true })
-    expect(screen.getByTestId('row').classList).toContain('elegido')
+    render(ProductoRow, { producto, seleccionado: true, key: 1 })
+    expect(screen.getByTestId('row-1').classList).toContain('elegido')
   })
 
   it('muestra el elemento no seleccionado con una clase normal', () => {
-    render(ProductoRow, { producto, seleccionado: false })
-    expect(screen.getByTestId('row').classList).toContain('normal')
+    render(ProductoRow, { producto, seleccionado: false, key: 1 })
+    expect(screen.getByTestId('row-1').classList).toContain('normal')
   })
 
   it('muestra la fecha de entrega en base a la cantidad de días', () => {
-    render(ProductoRow, { producto, seleccionado: false })
+    render(ProductoRow, { producto, seleccionado: false, key: 1 })
     expect(screen.getByTestId('fecha-entrega').innerHTML).toBe('Llega el 22/02/2024')
   })
 
   it('muestra el valor del producto con el formateo de currency', () => {
-    render(ProductoRow, { producto, seleccionado: false })
+    render(ProductoRow, { producto, seleccionado: false, key: 1 })
     expect(screen.getByTestId('precio').innerHTML).toBe('$&nbsp;1.200,00')
   })
 
