@@ -1,6 +1,26 @@
 <script>
+  import './styles.css'
 	import Contador from '$lib/Contador.svelte'
+	import Producto from '$lib/Producto.svelte'
+  import { productos } from '$lib/productos'
+  let itemSeleccionado = $state(1)
 </script>
 
-<Contador valorInicial={1} desde={1} hasta={4}></Contador>
-<Contador></Contador>
+<div class='title'>
+  <h2>
+    Carrito de compras
+  </h2>
+</div>
+
+{#each productos as producto, i}
+  <Producto producto={producto} seleccionado={i + 1 === itemSeleccionado}/>
+{/each}
+
+<Contador bind:valor={itemSeleccionado} desde={1} hasta={4}></Contador>
+<hr/>
+<div class='title'>
+  <h2>
+    Contador libre
+  </h2>
+</div>
+<Contador/>

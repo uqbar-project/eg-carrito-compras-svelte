@@ -8,3 +8,8 @@
 	--primary-font-color: white;
 	--secondary-font-color: black;
 }
+
+.title {
+	background: linear-gradient(270deg, rgba(129,128,156,1) 0%, rgba(124,193,222,1) 0%, rgba(233,241,242,1) 100%);
+	padding: 0.5rem 0.5rem;
+}
