@@ -16,7 +16,7 @@
   <ProductoRow producto={producto} seleccionado={i + 1 === itemSeleccionado} key={i + 1}/>
 {/each}
 
-<Contador bind:valor={itemSeleccionado} desde={1} hasta={4}></Contador>
+<Contador bind:valor={itemSeleccionado} desde={1} hasta={productos.length}></Contador>
 <hr/>
 <div class='title'>
   <h2>
