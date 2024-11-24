@@ -1,7 +1,7 @@
 <script>
   import './styles.css'
 	import Contador from '$lib/Contador.svelte'
-	import Producto from '$lib/Producto.svelte'
+	import Producto from '$lib/ProductoRow.svelte'
   import { productos } from '$lib/productos'
   let itemSeleccionado = $state(1)
 </script>

@@ -16,6 +16,6 @@
     <p class="secundario" data-testid="fecha-entrega">Llega el {format(producto.fechaEntrega(), 'dd/MM/yyyy')}</p>
   </div>
   <div class="precio">
-    <p class="precio">{showCurrency(producto.valor)}</p>
+    <p class="precio" data-testid="precio">{showCurrency(producto.valor)}</p>
   </div>
 </div>
