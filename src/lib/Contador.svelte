@@ -1,20 +1,20 @@
-<script lang='ts'>
+<script lang="ts">
   import './contador.css'
 
   let { valor = $bindable(0), desde = undefined, hasta = undefined } = $props()
 
-	const restar = () => {
+  const restar = () => {
     valor--
     valor = !!desde && valor < desde ? hasta : valor
   }
-	const sumar = () => {
+  const sumar = () => {
     valor++
     valor = !!hasta && valor > hasta ? desde : valor
   }
 </script>
 
-<div class='box'>
-  <button data-testid="restar" class='secondary' onclick={restar}>-</button>
+<div class="box">
+  <button data-testid="restar" class="secondary" onclick={restar}>-</button>
   <span data-testid="valor">{valor}</span>
-  <button data-testid="sumar" class='primary' onclick={sumar}>+</button>
+  <button data-testid="sumar" class="primary" onclick={sumar}>+</button>
 </div>

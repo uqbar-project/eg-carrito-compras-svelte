@@ -18,7 +18,7 @@ describe('el producto', () => {
     vi.useRealTimers()
   })
 
-	it('muestra el elemento seleccionado con una clase especial', () => {
+  it('muestra el elemento seleccionado con una clase especial', () => {
     render(ProductoRow, { producto, seleccionado: true, key: 1 })
     expect(screen.getByTestId('row-1').classList).toContain('elegido')
   })
