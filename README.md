@@ -8,9 +8,9 @@
 
 En este ejemplo tenemos un componente contador, con algunas cosas interesantes para contar
 
-- por un lado, recibe como parámetro el valor inicial, el rango desde y hasta. Utilizamos para ello la runa `$.props`
+- por un lado, recibe como parámetro el valor inicial, el rango desde y hasta. Utilizamos para ello la runa `$props`
 - el rango desde y hasta son opcionales, por eso proveemos un valor por defecto
-- pero además, **nosotros queremos que el Contador avise al componente llamador cuando cambie el valor**. Y ésto lo logramos con la runa `$.bindable`
+- pero además, **nosotros queremos que el Contador avise al componente llamador cuando cambie el valor**. Y ésto lo logramos con la runa `$bindable`
 
 Veamos la implementación
 
