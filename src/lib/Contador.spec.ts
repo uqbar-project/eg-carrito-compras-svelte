@@ -1,6 +1,6 @@
 import Contador from '$lib/Contador.svelte'
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/svelte'
+import { render, screen, waitFor } from '@testing-library/svelte'
 
 describe('el contador', () => {
 
@@ -24,38 +24,46 @@ describe('el contador', () => {
   describe('sin rango desde/hasta', () => {
     it('suma indefinidamente', async () => {
       render(Contador, { valor: 5 } )
-      await screen.getByTestId('sumar').click()
-      await screen.getByTestId('sumar').click()
-      await screen.getByTestId('sumar').click()
-      await screen.getByTestId('sumar').click()
-      expect(getValor()).toBe(9)
+      screen.getByTestId('sumar').click()
+      screen.getByTestId('sumar').click()
+      screen.getByTestId('sumar').click()
+      screen.getByTestId('sumar').click()
+      await waitFor(() => {
+        expect(getValor()).toBe(9)
+      })
     })
 
     it('resta indefinidamente', async () => {
       render(Contador, { valor: 3 } )
-      await screen.getByTestId('restar').click()
-      await screen.getByTestId('restar').click()
-      await screen.getByTestId('restar').click()
-      await screen.getByTestId('restar').click()
-      expect(getValor()).toBe(-1)
+      screen.getByTestId('restar').click()
+      screen.getByTestId('restar').click()
+      screen.getByTestId('restar').click()
+      screen.getByTestId('restar').click()
+      await waitFor(() => {
+        expect(getValor()).toBe(-1)
+      })
     })
   })
 
   describe('con rango desde/hasta', () => {
     it('suma hasta que llega al límite y vuelve a empezar', async () => {
       render(Contador, { valor: 3, desde: 1, hasta: 4 } )
-      await screen.getByTestId('sumar').click()
-      await screen.getByTestId('sumar').click()
-      await screen.getByTestId('sumar').click()
-      expect(getValor()).toBe(2)
+      screen.getByTestId('sumar').click()
+      screen.getByTestId('sumar').click()
+      screen.getByTestId('sumar').click()
+      await waitFor(() => {
+        expect(getValor()).toBe(2)
+      })
     })
 
     it('resta indefinidamente', async () => {
       render(Contador, { valor: 2, desde: 1, hasta: 4 } )
-      await screen.getByTestId('restar').click()
-      await screen.getByTestId('restar').click()
-      await screen.getByTestId('restar').click()
-      expect(getValor()).toBe(3)
+      screen.getByTestId('restar').click()
+      screen.getByTestId('restar').click()
+      screen.getByTestId('restar').click()
+      await waitFor(() => {
+        expect(getValor()).toBe(3)
+      })
     })
   })
 
