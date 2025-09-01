@@ -15,7 +15,7 @@ En este ejemplo tenemos un componente contador, con algunas cosas interesantes p
 Veamos la implementación
 
 ```sv
-  let { valor = $bindable(0), desde = undefined, hasta = undefined } = $props()
+  let { valor = $bindable(0), desde, hasta }: ContadorProps = $props()
 ```
 
 Luego es un componente común de Svelte, al presionar los botones `+` y `-` vamos sumando o restando el valor
