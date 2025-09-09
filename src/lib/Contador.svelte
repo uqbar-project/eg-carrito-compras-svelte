@@ -2,7 +2,7 @@
   import './contador.css'
 
   type ContadorProps = {
-    valor: number,
+    valor?: number,
     desde?: number,
     hasta?: number,
   }

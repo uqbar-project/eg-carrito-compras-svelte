@@ -10,7 +10,7 @@
 	<h2>Carrito de compras</h2>
 </div>
 
-{#each productos as producto, i}
+{#each productos as producto, i (i)}
 	<ProductoRow {producto} seleccionado={i + 1 === itemSeleccionado} key={i + 1} />
 {/each}
 

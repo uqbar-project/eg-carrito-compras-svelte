@@ -2,8 +2,15 @@
   import { format } from 'date-fns'
   import './producto.css'
   import { showCurrency } from './utils'
+  import type { Producto } from './productos'
 
-  let { producto, seleccionado, key } = $props()
+  type ProductoRowProps = {
+    producto: Producto,
+    seleccionado: boolean,
+    key: number,
+  }
+
+  let { producto, seleccionado, key }: ProductoRowProps = $props()
   let claseSeleccion = $derived(seleccionado ? 'elegido' : 'normal')
 </script>
 
