@@ -1,17 +1,26 @@
 <script lang="ts">
   import './contador.css'
 
-  type ContadorProps = { valor?: number; desde?: number; hasta?: number }
+  type ContadorProps = {
+    valor: number,
+    desde?: number,
+    hasta?: number,
+  }
 
-  let { valor = $bindable(0), desde, hasta }: ContadorProps = $props()
+  let { valor = $bindable(0), desde = undefined, hasta = undefined }: ContadorProps 
+    = $props()
 
   const restar = () => {
     valor--
-    valor = !!desde && !!hasta && valor < desde ? hasta : valor
+    if (desde && hasta && valor < desde) {
+      valor = hasta
+    }
   }
   const sumar = () => {
     valor++
-    valor = !!hasta && !!desde && valor > hasta ? desde : valor
+    if (desde && hasta && valor > hasta) {
+      valor = desde
+    }
   }
 </script>
 
@@ -20,4 +29,3 @@
   <span data-testid="valor">{valor}</span>
   <button data-testid="sumar" class="primary" onclick={sumar}>+</button>
 </div>
-
